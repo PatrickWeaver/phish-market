@@ -24,9 +24,9 @@ body {
 
 #start-header-container {
   display: inline-block;
-  background-color: rgba(255, 255, 255, .8);
-  padding: 10px;
-  border: 10px solid rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, .9);
+  padding: 30px;
+  border: 0px solid #FFF;
 }
 
 h1#start-header {
@@ -175,8 +175,8 @@ h2#instructions {
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 300%;
-  padding: 10px 20px;
+  font-size: 100%;
+  padding: 10px 10px;
   cursor: pointer;
   z-index: 502;
 
