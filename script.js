@@ -3,10 +3,10 @@ $(document).ready(function(){
   var rounds = [
     [
       [
-        "", "twitter1.jpg", "real"
+        "", "twitter1.png", "scam"
       ],
       [
-        "", "twitter2.jpg", "scam"
+        "", "twitter2.png", "real"
       ],
       [
         "", "twitter3.png", "real"

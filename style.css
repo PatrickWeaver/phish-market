@@ -103,7 +103,7 @@ h2#instructions {
 }
 
 #option-boxes-container {
-  margin: 0 4%;
+  margin: 0 2%;
 }
 
 .option-box-container {
@@ -118,9 +118,9 @@ h2#instructions {
   border: 3px solid black;
   border-radius: 5px;
   display: inline-block;
-  width: 80%;
+  width: 98%;
   min-height: 10em;
-  margin: .5em 10%;
+  margin: .5em 1%;
   cursor: pointer;
   background-color: #00A886;
   text-align: left;
