@@ -14,15 +14,15 @@ $(document).ready(function(){
     ],
     [
       [
-        "Ioana Frigura assigned you an action item in Text Your Computer With the Command Line Q3 FY17 Ioana Frigura -- bunny -- +patrick@mouse.org was this a typo? i'm not sure why the word 'bunny' is here.. Assigned to you Open 4 files with action items assigned to you", "round2option0.png", "real"
+        "", "facebook1.png", "real"
 
       ],
       [
-        "Hi Meredith and Patrick, I'm running a student event in a couple of weeks and have a request to do a few projects that 'revolve around Help Desk type stuff.' Any suggestions? Regards, Jonathan, Jonathan Clemens, Ph.D., Learning Network Manager, Mouse_Minnesota", "round2option1.png", "real"
+        "", "facebook2.png", "real"
 
       ],
       [
-        "In case you missed my email last week, timing in getting very tight now. You must read on to understand why you must act quickly for your benefit, and the benefit of your friends and family. If you recall, I told you that I have a friend who works at the food and drug administration who told me about a small company that has just completed human trials for a life-saving cancer therapy. There is nothing else on the market at the moment that can save 40% of patients with breast or prostate cancer. This drug does. The small company’s stock is going to go up from 2 dollars to over 30 dollars the moment that this announcement is made public within the next two weeks. Your window opportunity to buy shares of QSMG is quickly closing. You must act quickly before you miss out.", "round2option2.png", "scam"
+        "", "facebook3.png", "scam"
       ]
 
     ],
