@@ -102,25 +102,45 @@ h2#instructions {
   margin: 2.5em 0 .25em;
 }
 
-#option-boxes-container {
+#options-container {
+  position: fixed;
   margin: 0 2%;
+  width: 100%;
+  height: 100%;
 }
 
-.option-box-container {
-  width: 33%;
-  text-align: center;
-  margin: 0 0%;
-  display: inline-block;
-  vertical-align: top;
+.option-nav {
+  background-color: pink;
+  width: 5%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  height: 100%;
+}
+
+#left-button {
+  left: 0;
+}
+
+#right-button {
+  right: 0;
+}
+
+#option-boxes-container {
+  width: 400%;
+  position: absolute;
+  top:0;
+  left:0;
 }
 
 .option-box {
   border: 3px solid black;
   border-radius: 5px;
   display: inline-block;
-  width: 98%;
+  width: 21.5%;
   min-height: 10em;
-  margin: .5em 1%;
+  margin: .5em 1.75%;
   cursor: pointer;
   background-color: #00A886;
   text-align: left;
@@ -130,6 +150,14 @@ h2#instructions {
 .option-box:hover {
   border: 3px solid #B0B0B0;
   background-color: #03B896;
+}
+
+.option-image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+
 }
 
 .option-box h2 {
@@ -145,10 +173,6 @@ h2#instructions {
 }
 
 #option3 {
-}
-
-.option-image{
-  width: 100%;
 }
 
 .alert {
