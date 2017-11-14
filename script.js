@@ -48,6 +48,7 @@ $(document).ready(function(){
   var scamsChosen = 0;
   var position = 0;
   var transition = false;
+  var slideDelay = 1000;
 
   function nextOptions() {
     options = $( ".option-box" );
@@ -81,8 +82,22 @@ $(document).ready(function(){
       transition = true;
       var optionsWidth = $(window).width()
       if (position > -2){
-        $( "#option-" + (position + 1) ).hide("slide", {direction: "left"}, 1000, function() {});
-        $( "#option-" + (position + 2) ).show("slide", {direction: "right"}, 1000, function() {
+        /*
+        $( "#option-" + (position + 1) ).hide("slide", {direction: "left"}, 500, function() {
+          $( "#option-" + (position + 2) ).show("slide", {direction: "right"}, 500, function() {
+            position += 1;
+            showCorrectButtons();
+            transition = false;
+          });
+        });
+        */
+        var hideSlide = $( "#option-" + (position + 1) );
+        //hideSlide.css("position", "absolute");
+        //hideSlide.css("top", "0px");
+        hideSlide.hide("slide", {direction: "left"}, slideDelay, function() {
+          //hideSlide.css("position", "static");
+        });
+        $( "#option-" + (position + 2) ).show("slide", {direction: "right"}, slideDelay, function() {
           position += 1;
           showCorrectButtons();
           transition = false;
@@ -94,10 +109,14 @@ $(document).ready(function(){
   $( "#left-button" ).click(function() {
     if (!transition){
       transition = true;
-      var optionsWidth = $(window).width()
       if (position > 0){
-        $( "#option-" + (position + 1)).hide("slide", {direction: "right"}, 1000, function() {});
-        $( "#option-" + (position) ).show("slide", {direction: "left"}, 1000, function() {
+        var hideSlide = $( "#option-" + (position + 1) );
+        //hideSlide.css("position", "absolute");
+        //hideSlide.css("top", "0px");
+        hideSlide.hide("slide", {direction: "right"}, slideDelay, function() {
+          //hideSlide.css("position", "static");
+        });
+        $( "#option-" + (position) ).show("slide", {direction: "left"}, slideDelay, function() {
           position -= 1;
           showCorrectButtons();
           transition = false;
