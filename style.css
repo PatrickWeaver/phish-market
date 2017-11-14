@@ -130,28 +130,30 @@ h2#instructions {
 }
 
 #option-boxes-container {
-  width: 400%;
-  position: absolute;
-  top:0px;
-  left:0px;
-  z-index: 50;
+  width: 100%;
 }
+
+
 
 .option-box {
   border: 3px solid black;
   border-radius: 5px;
-  display: inline-block;
-  width: 21.5%;
-  height: 100%;
-  position: relative;
+  position: absolute;
+  display: block;
+  width: 86%;
+  max-height: 82%;
   top: 0;
-  bottom: 0;
   overflow: scroll;
-  margin: .5em 1.75%;
+  margin: .5em 7%;
   cursor: pointer;
   background-color: #00A886;
   text-align: left;
   padding: 10px;
+  z-index: 50;
+}
+
+#option-2, #option-3 {
+  display: none;
 }
 
 .option-box:hover {

@@ -47,6 +47,7 @@ $(document).ready(function(){
   var realChosen = 0;
   var scamsChosen = 0;
   var position = 0;
+  var transition = false;
 
   function nextOptions() {
     options = $( ".option-box" );
@@ -76,28 +77,32 @@ $(document).ready(function(){
 
 
   $( "#right-button" ).click(function() {
-    var optionsWidth = $(window).width()
-    if (position > -2){
-      var cardWidth = optionsWidth + 4;
-      var currentLeftVal = $( "#option-boxes-container" ).css("left");
-      var currentLeft = parseInt(currentLeftVal.substring(0, currentLeftVal.length - 2));
-      $( "#option-boxes-container" ).animate({left: (currentLeft - cardWidth).toString() + "px" }, 1000, function() {
-        position += 1;
-        showCorrectButtons();
-      });
+    if (!transition){
+      transition = true;
+      var optionsWidth = $(window).width()
+      if (position > -2){
+        $( "#option-" + (position + 1) ).hide("slide", {direction: "left"}, 1000, function() {});
+        $( "#option-" + (position + 2) ).show("slide", {direction: "right"}, 1000, function() {
+          position += 1;
+          showCorrectButtons();
+          transition = false;
+        });
+      }
     }
   });
 
   $( "#left-button" ).click(function() {
-    var optionsWidth = $(window).width()
-    if (position > 0){
-      var cardWidth = optionsWidth + 4;
-      var currentLeftVal = $( "#option-boxes-container" ).css("left");
-      var currentLeft = parseInt(currentLeftVal.substring(0, currentLeftVal.length - 2));
-      $( "#option-boxes-container" ).animate({left: (currentLeft + cardWidth).toString() + "px" }, 1000, function() {
-        position -= 1;
-        showCorrectButtons();
-      });
+    if (!transition){
+      transition = true;
+      var optionsWidth = $(window).width()
+      if (position > 0){
+        $( "#option-" + (position + 1)).hide("slide", {direction: "right"}, 1000, function() {});
+        $( "#option-" + (position) ).show("slide", {direction: "left"}, 1000, function() {
+          position -= 1;
+          showCorrectButtons();
+          transition = false;
+        });
+      }
     }
   });
 
@@ -108,9 +113,11 @@ $(document).ready(function(){
     }
     if (position === 0) {
       $( "#left-button" ).hide();
+      $( "#right-button").show();
     }
     if (position === 2) {
       $( "#right-button" ).hide();
+      $( "#left-button" ).show();
     }
   }
 
@@ -121,13 +128,15 @@ $(document).ready(function(){
         if (rounds[round][o][2] === "scam"){
           $( "#scam-alert" ).show();
           scamsChosen += 1;
+          break;
         } else {
           $( "#real-alert" ).show();
           realChosen += 1;
+          break;
         };
       }
     }
-  })
+  });
 
   $( ".alert .close").click(function() {
     $( this ).parent().parent().hide();
@@ -136,6 +145,11 @@ $(document).ready(function(){
 
   function nextRound() {
     round += 1;
+    position = 0;
+    showCorrectButtons();
+    $( "#option-1").show();
+    $( "#option-2").hide();
+    $( "#option-3").hide();
     optionTexts = $( ".option-content" );
     for (var i = 0; i < 3; i++) {
       $( optionTexts[i] ).remove();
