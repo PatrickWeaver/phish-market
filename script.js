@@ -82,15 +82,6 @@ $(document).ready(function(){
       transition = true;
       var optionsWidth = $(window).width()
       if (position > -2){
-        /*
-        $( "#option-" + (position + 1) ).hide("slide", {direction: "left"}, 500, function() {
-          $( "#option-" + (position + 2) ).show("slide", {direction: "right"}, 500, function() {
-            position += 1;
-            showCorrectButtons();
-            transition = false;
-          });
-        });
-        */
         var hideSlide = $( "#option-" + (position + 1) );
         //hideSlide.css("position", "absolute");
         //hideSlide.css("top", "0px");
@@ -141,23 +132,20 @@ $(document).ready(function(){
   }
 
 
-  $( ".option-box").click(function() {
-    for (var o in options) {
-      if (this === options[o]){
-        if (rounds[round][o][2] === "scam"){
-          $( "#scam-alert" ).show();
-          scamsChosen += 1;
-          break;
-        } else {
-          $( "#real-alert" ).show();
-          realChosen += 1;
-          break;
-        };
-      }
+  $( "#scam-button").click(function() {
+    if (rounds[round][position][2] === "scam") {
+      $( "#alert-container" ).show();
+      $( "#scam-alert" ).show();
+      scamsChosen += 1;
+    } else {
+      $( "#alert-container" ).show();
+      $( "#real-alert" ).show();
+      realChosen += 1;
     }
   });
 
   $( ".alert .close").click(function() {
+    $( "#alert-container" ).hide();
     $( this ).parent().parent().hide();
     nextRound();
   })

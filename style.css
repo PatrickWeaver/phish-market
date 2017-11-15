@@ -21,8 +21,10 @@ button {
   cursor: pointer;
 }
 
-.hide {
-  display: none;
+button:hover {
+  background-color: #F44;
+  border: 2px solid #666;
+  color: #333;
 }
 
 #start-container {
@@ -167,4 +169,31 @@ h2#instructions {
   width: 100%;
   text-align: center;
   margin: 1em 0;
+}
+
+#alert-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 199;
+}
+
+.alert {
+  display: none;
+  position: absolute;
+  width: 80%;
+  margin: 8em 10% 0;
+  padding: .5em;
+  background-color: white;
+  border: 2px solid black;
+  z-index: 200;
+  text-align: center;
+}
+
+.close {
+
 }
