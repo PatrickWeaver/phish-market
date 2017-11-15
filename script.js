@@ -3,14 +3,15 @@ $(document).ready(function(){
   var rounds = [
     [
       [
-        "", "twitter1.png", "scam"
+        "", "twitter1.png", "scam", "Great Job! You found the scam!"
       ],
       [
-        "", "twitter2.png", "real"
+        "", "twitter2.png", "real", "Oops! The real scam was option 1"
       ],
       [
-        "", "twitter3.png", "real"
-      ]
+        "", "twitter3.png", "real", "Oops! The real scam was option 1"
+      ],
+      "<div class='explanation'><h3>Some clues that option 1 was a scam are:</h3><ol><li><strong>URL Shortener instead of real URL:</strong>A URL shortener can be useful to share a long web address, but it can also mask a long suspicious URL.</li></div>"
     ],
     [
       [
@@ -55,10 +56,10 @@ $(document).ready(function(){
     for (var i = 0; i < 3; i++) {
       var addContent = "";
       addContent += "<div class='option-content'>";
-      if (rounds[round][i][0] != ""){
+      if (rounds[round][i][0] != "") {
         addContent += rounds[round][i][0] + "<br><br>";
       }
-      addContent += "<img class='option-image' src='images/" + rounds[round][i][1] + "'></div>";
+      addContent += "<div  class='option-image'><img src='images/" + rounds[round][i][1] + "'></div></div>";
       //$( addContent ).appendTo($( options[i] ));
       $( options[i] ).append(addContent);
     }
@@ -135,16 +136,19 @@ $(document).ready(function(){
   $( "#scam-button").click(function() {
     if (rounds[round][position][2] === "scam") {
       $( "#alert-container" ).show();
+      $( ".alert-content").html("<h2>" + rounds[round][position][3] + "</h2>" + rounds[round][3]);
       $( "#scam-alert" ).show();
       scamsChosen += 1;
     } else {
       $( "#alert-container" ).show();
+      $( ".alert-content").html("<h2>" + rounds[round][position][3] + "</h2>" + rounds[round][3]);
       $( "#real-alert" ).show();
       realChosen += 1;
     }
   });
 
   $( ".alert .close").click(function() {
+    $( ".alert-content" ).html("");
     $( "#alert-container" ).hide();
     $( this ).parent().parent().hide();
     nextRound();

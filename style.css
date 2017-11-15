@@ -159,6 +159,14 @@ h2#instructions {
   text-align: center;
 }
 
+.option-image {
+  border: 1px solid green;
+}
+
+.option-image > img {
+  max-width: 100%;
+}
+
 #option-2, #option-3 {
   display: none;
 }
@@ -169,6 +177,11 @@ h2#instructions {
   width: 100%;
   text-align: center;
   margin: 1em 0;
+
+}
+
+#scam-button > button {
+  font-size: 125%;
 }
 
 #alert-container {
@@ -192,6 +205,10 @@ h2#instructions {
   border: 2px solid black;
   z-index: 200;
   text-align: center;
+}
+
+.explanation {
+  text-align: left;
 }
 
 .close {
