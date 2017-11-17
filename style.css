@@ -207,6 +207,11 @@ h2#instructions {
   text-align: center;
 }
 
+.alert-content > ul {
+  text-align: left;
+  width: 70%;
+}
+
 .explanation {
   text-align: left;
 }

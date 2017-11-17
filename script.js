@@ -3,15 +3,15 @@ $(document).ready(function(){
   var rounds = [
     [
       [
-        "", "twitter1.png", "scam", "Great Job! You found the scam!"
+        "", "twitter1.png", "scam"
       ],
       [
-        "", "twitter2.png", "real", "Oops! The real scam was option 1"
+        "", "twitter2.png", "real"
       ],
       [
-        "", "twitter3.png", "real", "Oops! The real scam was option 1"
+        "", "twitter3.png", "real"
       ],
-      "<div class='explanation'><h3>Some clues that option 1 was a scam are:</h3><ol><li><strong>URL Shortener instead of real URL:</strong>A URL shortener can be useful to share a long web address, but it can also mask a long suspicious URL.</li></div>"
+      [["URL Shortener instead of real URL", "A URL shortener can be useful to share a long web address, but it can also mask a long suspicious URL."]]
     ],
     [
       [
@@ -60,7 +60,6 @@ $(document).ready(function(){
         addContent += rounds[round][i][0] + "<br><br>";
       }
       addContent += "<div  class='option-image'><img src='images/" + rounds[round][i][1] + "'></div></div>";
-      //$( addContent ).appendTo($( options[i] ));
       $( options[i] ).append(addContent);
     }
   }
@@ -74,20 +73,13 @@ $(document).ready(function(){
     nextOptions();
   });
 
-  //var optionsWidth = $( "#option-boxes-container" ).outerWidth();
-
-
-
   $( "#right-button" ).click(function() {
     if (!transition){
       transition = true;
       var optionsWidth = $(window).width()
       if (position > -2){
         var hideSlide = $( "#option-" + (position + 1) );
-        //hideSlide.css("position", "absolute");
-        //hideSlide.css("top", "0px");
         hideSlide.hide("slide", {direction: "left"}, slideDelay, function() {
-          //hideSlide.css("position", "static");
         });
         $( "#option-" + (position + 2) ).show("slide", {direction: "right"}, slideDelay, function() {
           position += 1;
@@ -103,10 +95,7 @@ $(document).ready(function(){
       transition = true;
       if (position > 0){
         var hideSlide = $( "#option-" + (position + 1) );
-        //hideSlide.css("position", "absolute");
-        //hideSlide.css("top", "0px");
         hideSlide.hide("slide", {direction: "right"}, slideDelay, function() {
-          //hideSlide.css("position", "static");
         });
         $( "#option-" + (position) ).show("slide", {direction: "left"}, slideDelay, function() {
           position -= 1;
@@ -134,17 +123,25 @@ $(document).ready(function(){
 
 
   $( "#scam-button").click(function() {
-    if (rounds[round][position][2] === "scam") {
-      $( "#alert-container" ).show();
-      $( ".alert-content").html("<h2>" + rounds[round][position][3] + "</h2>" + rounds[round][3]);
-      $( "#scam-alert" ).show();
+    var correct = ["Great job! Option ", " was the scam!"];
+    var incorrect = ["Oops! The scam was option ", "."];
+    var alertHeader;
+    var r = rounds[round];
+    if (r[position][2] === "scam") {
+      alertHeader = correct[0] + (position + 1) + correct[1];
       scamsChosen += 1;
     } else {
-      $( "#alert-container" ).show();
-      $( ".alert-content").html("<h2>" + rounds[round][position][3] + "</h2>" + rounds[round][3]);
-      $( "#real-alert" ).show();
+      alertHeader = incorrect[0] + (position + 1) + incorrect[1];
       realChosen += 1;
     }
+    var explanationContent = "<h3>Some reasons why option " + (position + 1) + " is more likely to be a scam are:</h3><ul>";
+    for (var i in r[3]) {
+      var reason = r[3][i];
+      explanationContent += "<li><strong>" + reason[0] + ":</strong> " + reason[1] + "</li>";
+    }
+    $( ".alert-content").html("<h2>" + alertHeader + "</h2>" + explanationContent);
+    $( "#scam-alert" ).show();
+    $( "#alert-container" ).show();
   });
 
   $( ".alert .close").click(function() {
