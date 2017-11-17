@@ -209,7 +209,7 @@ h2#instructions {
 
 .alert-content > ul {
   text-align: left;
-  width: 70%;
+  max-width: 600px;
 }
 
 .explanation {
