@@ -210,6 +210,11 @@ h2#instructions {
 .alert-content > ul {
   text-align: left;
   max-width: 600px;
+  margin: 0 auto;
+}
+
+.alert-content > ul > li {
+  width: 100%;
 }
 
 .explanation {

@@ -11,7 +11,16 @@ $(document).ready(function(){
       [
         "", "twitter3.png", "real"
       ],
-      [["URL Shortener instead of real URL", "A URL shortener can be useful to share a long web address, but it can also mask a long suspicious URL."]]
+      [
+        [
+          "URL Shortener instead of real URL",
+          "A URL shortener can be useful to share a long web address, but it can also mask a long suspicious URL."
+        ],
+        [
+          "Offers you money for nothing",
+          "Whenever people offer easy money online it's often too good to be true."
+        ]
+      ]
     ],
     [
       [
@@ -127,14 +136,22 @@ $(document).ready(function(){
     var incorrect = ["Oops! The scam was option ", "."];
     var alertHeader;
     var r = rounds[round];
-    if (r[position][2] === "scam") {
-      alertHeader = correct[0] + (position + 1) + correct[1];
+
+    var correctChoice;
+    for (var i = 0; i < 3; i ++) {
+      if (r[i][2] === "scam") {
+        correctChoice = i;
+        break;
+      }
+    }
+    if (position === correctChoice) {
+      alertHeader = correct[0] + (correctChoice + 1) + correct[1];
       scamsChosen += 1;
     } else {
-      alertHeader = incorrect[0] + (position + 1) + incorrect[1];
+      alertHeader = incorrect[0] + (correctChoice + 1) + incorrect[1];
       realChosen += 1;
     }
-    var explanationContent = "<h3>Some reasons why option " + (position + 1) + " is more likely to be a scam are:</h3><ul>";
+    var explanationContent = "<h3>Some reasons why option " + (correctChoice + 1) + " is more likely to be a scam are:</h3><ul>";
     for (var i in r[3]) {
       var reason = r[3][i];
       explanationContent += "<li><strong>" + reason[0] + ":</strong> " + reason[1] + "</li>";
