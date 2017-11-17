@@ -82,38 +82,45 @@ $(document).ready(function(){
     nextOptions();
   });
 
-  $( "#right-button" ).click(function() {
-    if (!transition){
+  $( ".option-nav").click(function() {
+    var id = $(this).attr("id");
+    if (!transition) {
       transition = true;
-      var optionsWidth = $(window).width()
-      if (position > -2){
-        var hideSlide = $( "#option-" + (position + 1) );
-        hideSlide.hide("slide", {direction: "left"}, slideDelay, function() {
-        });
-        $( "#option-" + (position + 2) ).show("slide", {direction: "right"}, slideDelay, function() {
-          position += 1;
-          showCorrectButtons();
-          transition = false;
-        });
-      }
+      slideOption(id);
     }
   });
 
-  $( "#left-button" ).click(function() {
-    if (!transition){
-      transition = true;
-      if (position > 0){
-        var hideSlide = $( "#option-" + (position + 1) );
-        hideSlide.hide("slide", {direction: "right"}, slideDelay, function() {
-        });
-        $( "#option-" + (position) ).show("slide", {direction: "left"}, slideDelay, function() {
-          position -= 1;
-          showCorrectButtons();
-          transition = false;
-        });
+  function slideOption(id) {
+    var allowed = false;
+    var direction;
+    var move;
+    if (id === "right-button") {
+      if (position < 2) {
+        allowed = true;
+        direction = "left";
+        slide = "right";
+        move = 1;
+      }
+    } else {
+      if (position > 0) {
+        allowed = true;
+
+        direction = "right";
+        slide = "left";
+        move = -1;
       }
     }
-  });
+    if (allowed){
+      var hideSlide = $( "#option-" + (position + 1) );
+      hideSlide.hide("slide", {direction: direction}, slideDelay, function() {
+      });
+      $( "#option-" + (position + (1 + move)) ).show("slide", {direction: slide}, slideDelay, function() {
+        position += move;
+        showCorrectButtons();
+        transition = false;
+      });
+    }
+  }
 
   function showCorrectButtons() {
     if (position === 1) {
