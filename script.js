@@ -33,6 +33,16 @@ $(document).ready(function(){
       ],
       [
         "", "facebook3.png", "scam"
+      ],
+      [
+        [
+          "Email Domain",
+          "The real emails from Facebook are from the domain '@facebookmail.com', but the scam email is from 'facebook.security-details-facebook.com'. Scam websites sometimes use a subdomain to make it look like they have a different URL."
+        ],
+        [
+          "Asks you to provide your password",
+          "Websites that you sign up for already have your password and won't ask you to confirm it in an email. The real email from Facebook gives you a security code to give to them. This allows you to confirm your identity without requiring your password."
+        ]
       ]
 
     ],
