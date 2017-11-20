@@ -57,6 +57,14 @@ $(document).ready(function(){
       ],
       [
         "", "instagram3.png", "real"
+      ],
+      [
+        "Long URL with a confusing subdomain",
+        "Sometimes using a familiar subdomain can make a URL look more legitimate than it is."
+      ],
+      [
+        "Promises you secret information",
+        "Scams might try to lure you in with interesting information about you or someone else. It's a good idea to think about whether it's possible for them to know what they are offering before going further."
       ]
     ]
   ]
