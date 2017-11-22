@@ -58,7 +58,7 @@ $(document).ready(function(){
       [
         "", "instagram3.png", "real"
       ],
-      [    
+      [
         [
           "Long URL with a confusing subdomain",
           "Sometimes using a familiar subdomain can make a URL look more legitimate than it is."
@@ -209,11 +209,12 @@ $(document).ready(function(){
     if (round != totalRounds){
       nextOptions();
     } else {
-      endGame()
+      endGame();
     }
   }
 
   function endGame() {
+    $( "#alert-container" ).show();
     $( "#end-alert" ).show();
     $( "#end-alert" ).append("<p>You Guessed " + scamsChosen + " of " + totalRounds + " scams correctly!</p>");
   }

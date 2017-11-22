@@ -19,9 +19,9 @@
     <h2 id="instructions">
       Pick the message you think is a scam:
     </h2>
-    <div id="scam-button"><button>This is the scam!</button></div>
+    <div id="scam-button"><button class="red-button">This is the scam!</button></div>
     <div id="options-container">
-      <div id="left-button" class="option-nav">
+      <div id="left-button" class="option-nav green-button">
         <h1>&lt;</h1>
       </div>
       <div id="option-boxes-container">
@@ -41,26 +41,32 @@
           </h2>
         </div>
       </div>
-      <div id="right-button" class="option-nav">
+      <div id="right-button" class="option-nav green-button">
         <h1>&gt;</h1>
       </div>
     </div>
     <div id="alert-container">
       <div id="scam-alert" class="alert">
         <div class="close-container">
-          <button class="close">
-            close [ x ]
+          <button class="close green-button">
+            Next Round! [ x ]
           </button>
         </div>
         <div class="alert-content">
         </div>
       </div>
-      
+
       <div id="end-alert" class="alert">
+        <div class="restart-container">
+          <button class="restart green-button">
+            restart [ ⤾ ]
+          </button>
+        </div>
         <h2>
           Game Over!
         </h2>
         <h3>Here's how you did:</h3>
+
       </div>
 
     </div>
@@ -75,7 +81,7 @@
         Phish Market
       </h1>
       <div id="start-button-container">
-        <button id="start">
+        <button id="start" class="green-button" >
           Start
         </button>
       </div>
