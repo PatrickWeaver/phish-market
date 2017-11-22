@@ -211,6 +211,8 @@ h2#instructions {
   display: none;
   position: absolute;
   width: 70%;
+  max-height: 80%;
+  overflow: scroll;
   margin: 8em 15% 0;
   padding: 1.5em;
   background-color: white;
