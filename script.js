@@ -216,7 +216,21 @@ $(document).ready(function(){
   function endGame() {
     $( "#alert-container" ).show();
     $( "#end-alert" ).show();
-    $( "#end-alert" ).append("<p>You Guessed " + scamsChosen + " of " + totalRounds + " scams correctly!</p>");
+    $( "#end-content" ).append("<p class='end-text'>You Guessed " + scamsChosen + " of " + totalRounds + " scams correctly.</p>");
   }
+
+  $( "#restart").click(function() {
+    round = 0;
+    realChosen = 0;
+    scamsChosen = 0;
+    position = 0;
+    $( "#alert-container" ).hide();
+    $( "#end-alert" ).hide();
+    $( "#start-button-container" ).show();
+    $( "#game" ).hide();
+    $( "body" ).css("background-image", "url('images/phishmarket.svg')");
+    $( "#end-content" ).html("");
+    $( "#start-container" ).show();
+  });
 
 });
