@@ -188,10 +188,24 @@ $(document).ready(function(){
     $( "#alert-container" ).show();
   });
 
+
+  var timesClosed = 0;
+
   $( ".alert .close").click(function() {
+    timesClosed += 1;
+    alert(timesClosed);
+    if (timesClosed === 2) {
+      $( "#score-game" ).show();
+      $( "#next-round" ).hide();
+    } else if (timesClosed === 3) {
+      $( "#score-game" ).hide();
+      $( "#next-round" ).show();
+      timesClosed = 0;
+    }
     $( ".alert-content" ).html("");
     $( "#alert-container" ).hide();
     $( this ).parent().parent().hide();
+    alert("end");
     nextRound();
   })
 

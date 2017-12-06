@@ -235,6 +235,10 @@ h2#instructions {
   margin: .5em 0;
 }
 
+#score-game {
+  display: none;
+}
+
 .explanation {
   text-align: left;
 }
