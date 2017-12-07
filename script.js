@@ -161,6 +161,7 @@ $(document).ready(function(){
 
 
   $( "#scam-button").click(function() {
+    $( "#game" ).css("position", "fixed");
     var correct = ["Great job! Option ", " was the scam!"];
     var incorrect = ["Oops! The scam was option ", "."];
     var alertHeader;
