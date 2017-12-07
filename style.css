@@ -96,7 +96,7 @@ button#start {
   height: 3.5em;
   background-color: #2f3996;
   display: inline-block;
-  z-index: 200;
+  z-index: 300;
 }
 
 #logo-container {
@@ -215,7 +215,7 @@ h2#instructions {
 #alert-container {
   display: none;
   position: absolute;
-  top: 0;
+  top: 3.5em;
   bottom: 0;
   right: 0;
   left: 0;

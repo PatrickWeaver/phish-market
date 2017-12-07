@@ -161,6 +161,7 @@ $(document).ready(function(){
 
 
   $( "#scam-button").click(function() {
+    $( "#game" ).css("display", "none");
     $( "#game" ).css("position", "fixed");
     var correct = ["Great job! Option ", " was the scam!"];
     var incorrect = ["Oops! The scam was option ", "."];
@@ -195,6 +196,8 @@ $(document).ready(function(){
   var timesClosed = 0;
 
   $( ".alert .close").click(function() {
+    $( "#game" ).css("display", "block");
+    $( "#game" ).css("position", "static");
     timesClosed += 1;
     if (timesClosed === 2) {
       $( "#score-game" ).show();
@@ -226,12 +229,16 @@ $(document).ready(function(){
   }
 
   function endGame() {
+    $( "#game" ).css("display", "none");
+    $( "#game" ).css("position", "fixed");
     $( "#alert-container" ).show();
     $( "#end-alert" ).show();
     $( "#end-content" ).append("<p class='end-text'>You Guessed " + scamsChosen + " of " + totalRounds + " scams correctly.</p>");
   }
 
   $( "#restart").click(function() {
+    $( "#game" ).css("display", "block");
+    $( "#game" ).css("position", "static");
     round = 0;
     realChosen = 0;
     scamsChosen = 0;
