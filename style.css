@@ -172,6 +172,35 @@ h2#instructions {
   display: inline-block;
 }
 
+#dots-container {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  text-align: center;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #CCC;
+  display: inline-block;
+  position:fixed; /* change this to fixed */
+  left: 50%;
+  margin-left: -7.5px;
+}
+
+#dot-0 {
+  margin-left: -30px;
+  background-color: #2f3996;
+}
+#dot-1 {
+  margin-left: -7.5px;
+}
+#dot-2 {
+    margin-left: 15px;
+}
+
 .option-box {
   position: absolute;
   z-index: 50;

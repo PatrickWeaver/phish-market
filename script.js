@@ -143,17 +143,22 @@ $(document).ready(function(){
   }
 
   function showCorrectButtons() {
-    if (position === 1) {
-      $( "#right-button").show();
-      $( "#left-button" ).show();
-    }
+    $( ".dot" ).css("background-color", "#CCC");
+
     if (position === 0) {
       $( "#left-button" ).hide();
       $( "#right-button").show();
+      $( "#dot-0" ).css("background-color", "#2f3996");
+    }
+    if (position === 1) {
+      $( "#right-button").show();
+      $( "#left-button" ).show();
+      $( "#dot-1" ).css("background-color", "#2f3996");
     }
     if (position === 2) {
       $( "#right-button" ).hide();
       $( "#left-button" ).show();
+      $( "#dot-2" ).css("background-color", "#2f3996");
     }
   }
 
