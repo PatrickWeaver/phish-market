@@ -139,66 +139,43 @@ h2#instructions {
   position: relative;
 }
 
-.option-nav {
-  cursor: pointer;
-  z-index: 100;
-  width: 5%;
-  margin: 0 2.5%;
-  position: absolute;
-  top: 0;
-  border: 2px solid black;
-  border-radius: 5px;
-  text align: center;
-  padding: .5em;
-}
-
-.option-nav > h1 {
-  text-align: center;
-  margin: 0;
-}
-
-#left-button {
-  left: 0;
-  display: none;
-}
-
-#right-button {
-  right: 0;
-}
-
 #option-boxes-container {
   margin: 0 auto;
   width: 100%;
   display: inline-block;
 }
 
-#dots-container {
-  width: 100%;
-  position: fixed;
-  background-color: white;
+#option-box-header-container {
+  width: 80%;
   text-align: center;
+  padding: 0 0%;
+  margin: 0 10%;
 }
 
-.dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  background-color: #CCC;
+.option-header {
   display: inline-block;
-  position:fixed; /* change this to fixed */
-  left: 50%;
-  margin-left: -7.5px;
+  width: 32%;
+  border-top: 2px solid #888;
+  border-left: 2px solid #888;
+  border-right: 2px solid #888;
+  background-color: #DDD;
+  position: relative;
+  top: 2px;
+  z-index: 40;
+  cursor: pointer;
 }
 
-#dot-0 {
-  margin-left: -30px;
-  background-color: #2f3996;
+.option-header h2 {
+  display: inline-block;
+  width: 100%;
 }
-#dot-1 {
-  margin-left: -7.5px;
-}
-#dot-2 {
-    margin-left: 15px;
+
+#option-1-header {
+  background-color: #FFF;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  z-index: 100;
 }
 
 .option-box {
@@ -207,6 +184,7 @@ h2#instructions {
   width: 80%;
   margin: 0 10%;
   text-align: center;
+  border: 2px solid black;
 }
 
 .option-image {
@@ -306,16 +284,8 @@ h2#instructions {
     display: inline-block;
     margin: .25em auto;
     text-align: center;
-
   }
-
-  .option-nav {
-    width: 10%;
-    margin: 0 2.5%;
+  .option-header h2 {
+    font-size: 75%;
   }
-  .option-box {
-    width: 80%;
-    margin: 0 15%;
-  }
-
 }

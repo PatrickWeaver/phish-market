@@ -102,65 +102,62 @@ $(document).ready(function(){
     nextOptions();
   });
 
-  $( ".option-nav").click(function() {
-    var id = $(this).attr("id");
-    if (!transition) {
-      transition = true;
-      slideOption(id);
-    }
+
+  function resetHeaders() {
+    $( ".option-box" ).hide();
+    $( ".option-header" ).css(
+      {
+        "border-top": "2px solid #888",
+        "border-left": "2px solid #888",
+        "border-right": "2px solid #888",
+        "background-color": "#DDD",
+        "z-index": "40"
+      }
+    )
+  }
+
+  $( ".option-header" ).click(function() {
+    resetHeaders();
   });
 
-  function slideOption(id) {
-    var allowed = false;
-    var direction;
-    var move;
-    if (id === "right-button") {
-      if (position < 2) {
-        allowed = true;
-        direction = "left";
-        slide = "right";
-        move = 1;
-      }
-    } else {
-      if (position > 0) {
-        allowed = true;
-
-        direction = "right";
-        slide = "left";
-        move = -1;
-      }
-    }
-    if (allowed){
-      var hideSlide = $( "#option-" + (position + 1) );
-      hideSlide.hide("slide", {direction: direction}, slideDelay, function() {
-      });
-      $( "#option-" + (position + (1 + move)) ).show("slide", {direction: slide}, slideDelay, function() {
-        position += move;
-        showCorrectButtons();
-        transition = false;
-      });
-    }
+  var activeCSS =
+  {
+    "border-top": "2px solid black",
+    "border-left": "2px solid black",
+    "border-right": "2px solid black",
+    "background-color": "#FFF",
+    "z-index": "100"
   }
 
-  function showCorrectButtons() {
-    $( ".dot" ).css("background-color", "#CCC");
-
-    if (position === 0) {
-      $( "#left-button" ).hide();
-      $( "#right-button").show();
-      $( "#dot-0" ).css("background-color", "#2f3996");
-    }
-    if (position === 1) {
-      $( "#right-button").show();
-      $( "#left-button" ).show();
-      $( "#dot-1" ).css("background-color", "#2f3996");
-    }
-    if (position === 2) {
-      $( "#right-button" ).hide();
-      $( "#left-button" ).show();
-      $( "#dot-2" ).css("background-color", "#2f3996");
-    }
+  function option1() {
+    position = 0;
+    $( "#option-1").show();
+    $( "#option-1-header" ).css(activeCSS);
   }
+
+  function option2() {
+    position = 1;
+    $( "#option-2").show();
+    $( "#option-2-header" ).css(activeCSS);
+  }
+
+  function option3() {
+    position = 2;
+    $( "#option-3").show();
+    $( "#option-3-header" ).css(activeCSS);
+  }
+
+  $( "#option-1-header" ).click(function() {
+    option1();
+  });
+
+  $( "#option-2-header" ).click(function() {
+    option2();
+  });
+
+  $( "#option-3-header" ).click(function() {
+    option3();
+  });
 
 
   $( "#scam-button").click(function() {
@@ -214,11 +211,8 @@ $(document).ready(function(){
 
   function nextRound() {
     round += 1;
-    position = 0;
-    showCorrectButtons();
-    $( "#option-1").show();
-    $( "#option-2").hide();
-    $( "#option-3").hide();
+    resetHeaders();
+    option1();
     optionTexts = $( ".option-content" );
     for (var i = 0; i < 3; i++) {
       $( optionTexts[i] ).remove();
