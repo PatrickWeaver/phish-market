@@ -185,6 +185,7 @@ h2#instructions {
   margin: 0 10%;
   text-align: center;
   border: 2px solid black;
+  padding: .5em 0;
 }
 
 .option-image {
