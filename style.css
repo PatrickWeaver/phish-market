@@ -224,6 +224,28 @@ h2#instructions {
   border-radius: 5px;
 }
 
+.close-container {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  text-align: center;
+}
+
+.close {
+  position:fixed; /* change this to fixed */
+  left: 50%;
+  width: 40%;
+  margin-left: -20%;
+}
+
+#score-game {
+  display: none;
+}
+
+.alert-content {
+  margin-top: 4em;
+}
+
 .alert-content > ul {
   text-align: left;
   max-width: 600px;
@@ -233,10 +255,6 @@ h2#instructions {
 .alert-content > ul > li {
   width: 100%;
   margin: .5em 0;
-}
-
-#score-game {
-  display: none;
 }
 
 .explanation {
