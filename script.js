@@ -193,7 +193,6 @@ $(document).ready(function(){
 
   $( ".alert .close").click(function() {
     timesClosed += 1;
-    alert(timesClosed);
     if (timesClosed === 2) {
       $( "#score-game" ).show();
       $( "#next-round" ).hide();
@@ -205,7 +204,6 @@ $(document).ready(function(){
     $( ".alert-content" ).html("");
     $( "#alert-container" ).hide();
     $( this ).parent().parent().hide();
-    alert("end");
     nextRound();
   })
 
