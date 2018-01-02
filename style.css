@@ -70,6 +70,7 @@ button#start {
 
 .green-button {
   background-color: #00A886;
+  color: white;
 }
 
 .green-button:hover, green-button:active {
