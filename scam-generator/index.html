@@ -1,0 +1,225 @@
+
+<!doctype html>
+<html>
+  <head>
+
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+   	<link href='https://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
+   <meta charset="utf-8">
+    <title>Phish Market Activity Generator</title>
+    <script type="text/javascript">
+
+      function generator(){
+
+      // Add your own words between the quotes. If there are too many, just delete some. Be careful not to mess up the syntax!
+
+        var media = ["Ad","Text Message","Email",]
+
+                     var sender = ["GameStop","GameStart","GamePaws","Amazon.com","Barnes & Noble","Chase Bank","YouTunes","Bank of America","PayPal","Target","Walmart","iTunes","eBay","Steam","Anonymous Sender","Unicorn Depot","Ninja Supplies","Buy & Large","Toys 4 Days","Worst Buy","Best Buy","Slamazon.com","Hamazon.com","PayFriend","S-Mart","BuyStuff.biz","FaceSpace.com","MyFace.com","Facebook","InstaSnap","Snapstagram"]
+
+        var glitch = ["Spelling Errors","Weird Sender Address","Bad Graphics","Asks for your Password","Asks for your Credit Card number","Asks for your Social Security Number","Links go to the wrong place","Asks you to download something","Tells you your computer has a virus","You've never contacted them before","Promises free gifts","Suspicious links"]
+
+// Now add your own verb and adjective options between the quotes. If there are too many, just delete some. Be careful not to mess up the syntax!
+
+
+	//This code makes some random numbers
+
+  var randomNumber1 = parseInt(Math.random() * media.length);
+  var randomNumber2 = parseInt(Math.random() * sender.length);
+  var randomNumber3 = parseInt(Math.random() * glitch.length);
+  var media1= media[randomNumber1];
+  var sender1 = sender[randomNumber2];
+  var glitch1 = glitch[randomNumber3];
+
+
+
+  //If there's already a name, it is removed
+
+  if(document.getElementById("result")){
+    document.getElementById("placeholder").removeChild(document.getElementById("result"));
+  }
+
+  //A div element is created to show the generated combination name.
+  //The name is added as a textnode which will appear in the page in the placeholder.
+
+  var element = document.createElement("div");
+  element.setAttribute("id", "result");
+        element.appendChild(document.createTextNode("Media Type: "+media1));
+  var linebreak = document.createElement('br');
+element.appendChild(linebreak);
+        element.appendChild(document.createTextNode("Sender: "+sender1));
+ var linebreak = document.createElement('br');
+element.appendChild(linebreak);
+        element.appendChild(document.createTextNode("Glitch: "+glitch1));
+  document.getElementById("placeholder").appendChild(element);
+}
+
+    if(document.getElementById("result")){
+  document.getElementById("placeholder").removeChild(document.getElementById("result"));
+}
+
+    </script>
+  <script>(function fixExternalLinks() {
+              function pointToBlank(a) {
+                var href = a.getAttribute("href");
+                if (href && href.indexOf("//") > -1) {
+                  // this is an external link.
+                  if(!a.getAttribute("target")) {
+                    a.setAttribute("target", "_blank");
+                  }
+                }
+              }
+              function fixLinks() {
+                document.removeEventListener("DOMContentLoaded", fixLinks);
+                var anchors = document.querySelectorAll("a");
+                var asArray = Array.prototype.slice.call(anchors);
+                asArray.forEach(function(a) {
+                  pointToBlank(a);
+                });
+              }
+              document.addEventListener("DOMContentLoaded", fixLinks);
+            }())</script>
+</head>
+
+    <body onload="generator()">
+      <div id="title-header">
+        <div id="logo-container">
+          <img src="../images/MouseGearLogo.png">
+        </div>
+        <div id="title-container">
+          <a href="../"><h2>Phish Market</h2></a>
+        </div>
+      </div>
+
+      <div id="challenge-container">
+        <center>
+          <h1>Phish Market Challenge</h1>
+          <h2>Click below to generate a random 'scam'.</h2>
+
+          <article class="bubble">
+
+            <div id="placeholder"></div>
+            <p>
+            <input value="New Random Scam" type="button" class="btn" onclick="generator()"/>
+
+            </p>
+          </article>
+        </center>
+      </div>
+      </body>
+
+    <style>
+    * {
+    box-sizing: border-box;
+    }
+
+    body {
+      background: #FF3333;
+      margin: 6em 0 0;
+      font-family: "Ariel", sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+      #challenge-container h1 {
+        font-family: 'Copse', sans-serif;
+        font-weight: 500;
+        color: #FFFFFF;
+        line-height: 1em;
+        font-size: 3em;
+      }
+
+      #challenge-containerh2 {
+        font-family: 'Copse', sans-serif;
+        font-weight: 200;
+        color: #FFFFFF;
+        line-height: 1em;
+        font-size: 2em;
+      }
+
+     #challenge-container div {
+     	font-family: 'Copse', sans-serif;
+        font-weight: 500;
+        font-size: 1.3em;
+      	line-height: 1.5em;
+        color: #FF3333;
+      }
+
+      #challenge-container .bubble
+      {
+        position: relative;
+        width: 80%;
+        height: 60%;
+        padding: 10px;
+        -webkit-border-radius: 36px;
+        -moz-border-radius: 36px;
+        border-radius: 10px;
+        border: #FFFFFF 4px;
+        background: #FFFFFF;
+      }
+
+
+          .btn {
+            -webkit-border-radius: 40;
+            -moz-border-radius: 40;
+
+            border-radius: 40px;
+            border-color: transparent;
+            padding-top: cm;
+            font-family: Copse;
+            color: #ffffff;
+            font-size: 16px;
+            background: #1C3F94 ;
+            padding: 5px 10px 5px 10px;
+            text-decoration: none;
+            outline: 0;
+            cursor: pointer;
+
+          }
+
+
+          .btn:hover {
+            background: #00A886;
+            text-decoration: none;
+          }
+
+#title-header {
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 3.5em;
+  background-color: #2f3996;
+  display: inline-block;
+  z-index: 300;
+}
+
+#logo-container {
+  height: 3.5em;
+  padding: .5em;
+  display: inline-block;
+}
+
+#logo-container img {
+  height: 100%;
+  display: inline-block;
+}
+
+#title-container {
+  margin: .5em 1%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+#title-header h2 {
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  display: inline-block;
+}
+    </style>
+</html>

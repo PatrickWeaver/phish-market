@@ -85,7 +85,7 @@ $(document).ready(function(){
     for (var i = 0; i < 3; i++) {
       var addContent = "";
       addContent += "<div class='option-content'>";
-      addContent += "<div  class='option-image'><img src='images/" + rounds[round][i][1] + "' alt='" + rounds[round][i][0] + "'></div></div>";
+      addContent += "<div  class='option-image'><img src='../images/" + rounds[round][i][1] + "' alt='" + rounds[round][i][0] + "'></div></div>";
       $( options[i] ).append(addContent);
     }
   }
@@ -244,7 +244,7 @@ $(document).ready(function(){
     $( "#end-alert" ).hide();
     $( "#start-button-container" ).show();
     $( "#game" ).hide();
-    $( "body" ).css("background-image", "url('images/phishmarket.svg')");
+    $( "body" ).css("background-image", "url('../images/phishmarket.svg')");
     $( "#end-content" ).html("");
     $( "#start-container" ).show();
   });
