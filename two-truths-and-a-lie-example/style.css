@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #FFF no-repeat center center fixed;
+  background-image: url('../images/phishmarket.svg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 2px solid #444;
+  padding: .5em;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid #666;
+  color: #333;
+}
+
+#start-container {
+  text-align: center;
+  margin: 4em 0;
+}
+
+#start-header-container {
+  display: inline-block;
+  background-color: rgba(245, 245, 245, .93);
+  padding: 30px;
+  border: 0px solid #FFF;
+  width: 70%;
+  margin: 0 15%;
+}
+
+h1#start-header {
+  font-size: 6em;
+  max-width: 90%;
+  display: inline-block;
+  margin: .25em auto;
+  text-align: center;
+
+}
+
+#start-button-container {
+  text-align: center;
+  width: 100%;
+  margin: .5em;
+}
+
+
+button#start {
+   /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.green-button {
+  background-color: #00A886;
+  color: white;
+}
+
+.green-button:hover, green-button:active {
+  background-color: #39BBA0;
+}
+
+.red-button {
+  background-color: #FF3333;
+}
+
+.red-button:hover, red-button:active {
+  background-color: #FE5A57;
+}
+
+#game {
+  display: none;
+  margin: 3.5em 0 0;
+}
+
+#title-header {
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 3.5em;
+  background-color: #2f3996;
+  display: inline-block;
+  z-index: 300;
+}
+
+#logo-container {
+  height: 3.5em;
+  padding: .5em;
+  display: inline-block;
+}
+
+#logo-container img {
+  height: 100%;
+  display: inline-block;
+}
+
+#title-container {
+  margin: .5em 1%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+#title-header h2 {
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  display: inline-block;
+}
+#instructions-container {
+  text-align: center;
+}
+
+h2#instructions {
+  text-align: left;
+  margin: 1em 0 .25em;
+  width: 80%;
+  max-width: 800px;
+  display:inline-block;
+}
+
+#options-container {
+  position: relative;
+}
+
+#option-boxes-container {
+  margin: 0 auto;
+  width: 100%;
+  display: inline-block;
+}
+
+#option-box-header-container {
+  width: 80%;
+  text-align: center;
+  padding: 0 0%;
+  margin: 0 10%;
+}
+
+.option-header {
+  display: inline-block;
+  width: 32%;
+  border-top: 2px solid #888;
+  border-left: 2px solid #888;
+  border-right: 2px solid #888;
+  background-color: #DDD;
+  position: relative;
+  top: 2px;
+  z-index: 40;
+  cursor: pointer;
+}
+
+.option-header h2 {
+  display: inline-block;
+  width: 100%;
+}
+
+#option-1-header {
+  background-color: #FFF;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  z-index: 100;
+}
+
+.option-box {
+  position: absolute;
+  z-index: 50;
+  width: 80%;
+  margin: 0 10%;
+  text-align: center;
+  border: 2px solid black;
+  padding: .5em 0;
+}
+
+.option-image {
+}
+
+.option-image > img {
+  max-width: 100%;
+}
+
+#option-2, #option-3 {
+  display: none;
+}
+
+#scam-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 1em 0;
+
+}
+
+#scam-button > button {
+  font-size: 125%;
+}
+
+#alert-container {
+  display: none;
+  position: absolute;
+  top: 3.5em;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(200, 200, 200, 0.7);
+  z-index: 199;
+}
+
+.alert {
+  display: none;
+  position: absolute;
+  width: 70%;
+  max-height: 70%;
+  overflow: scroll;
+  margin: 8em 15% 0;
+  padding: 1.5em;
+  background-color: white;
+  border: 2px solid black;
+  z-index: 200;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.close-container {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  text-align: center;
+}
+
+.close {
+  position:fixed; /* change this to fixed */
+  left: 50%;
+  width: 40%;
+  margin-left: -20%;
+}
+
+#score-game {
+  display: none;
+}
+
+.alert-content {
+  margin-top: 4em;
+}
+
+.alert-content > ul {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.alert-content > ul > li {
+  width: 100%;
+  margin: .5em 0;
+}
+
+.explanation {
+  text-align: left;
+}
+
+.end-text {
+  font-size: 150%;
+}
+
+@media (max-width: 800px) {
+  h1#start-header {
+    font-size: 3em;
+    display: inline-block;
+    margin: .25em auto;
+    text-align: center;
+  }
+  .option-header h2 {
+    font-size: 75%;
+  }
+}

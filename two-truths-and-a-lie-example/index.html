@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phish Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="title-header">
+    <div id="logo-container">
+      <img src="../images/MouseGearLogo.png">
+    </div>
+    <div id="title-container">
+      <a href="../"><h2>Phish Market</h2></a>
+    </div>
+  </div>
+  <div id="game">
+
+    <div id="instructions-container">
+      <h2 id="instructions">
+        Read through the three options below and click the red button to pick which one is the lie:
+      </h2>
+    </div>
+    <div id="scam-button"><button class="red-button">This is the Lie!</button></div>
+    <div id="options-container">
+      <div id="option-boxes-container">
+        <div id="option-box-header-container">
+          <div id="option-1-header" class="option-header">
+            <h2>
+              Option 1
+            </h2>
+          </div>
+          <div id="option-2-header" class="option-header">
+            <h2>
+              Option 2
+            </h2>
+          </div>
+          <div id="option-3-header" class="option-header">
+            <h2>
+              Option 3
+            </h2>
+          </div>
+        </div>
+        <div id="option-1" class="option-box">
+
+        </div>
+        <div id="option-2" class="option-box">
+
+        </div>
+        <div id="option-3" class="option-box">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="alert-container">
+    <div id="scam-alert" class="alert">
+      <div class="close-container">
+        <button id="next-round" class="close green-button">
+          Next Round! [ x ]
+        </button>
+        <button id="score-game" class="close green-button">
+          Score Game! [ x ]
+        </button>
+      </div>
+      <div class="alert-content">
+      </div>
+    </div>
+
+    <div id="end-alert" class="alert">
+      <div class="restart-container">
+        <button id="restart" class="green-button">
+          restart [ ⤾ ]
+        </button>
+      </div>
+      <h2>
+        Game Over!
+      </h2>
+      <h3>Here's how you did:</h3>
+      <div id="end-content">
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="start-container">
+    <div id="start-header-container">
+      <h1 id="start-header">
+        Two Truths and a Lie
+      </h1>
+      <div id="start-button-container">
+        <button id="start" class="green-button" >
+          Start
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="jquery-3.2.0.min.js"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
